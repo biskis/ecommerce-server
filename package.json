@@ -1,0 +1,48 @@
+{
+  "name": "ecommerce-api",
+  "version": "1.0.1",
+  "description": "ecommerce-api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "ecommerce"
+  ],
+  "author": {
+    "name": "Daniel Dudas",
+    "email": "danimdy@gmail.com"
+  },
+  "engines": {
+    "node": "6.10.1"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
+    "config": "^1.25.1",
+    "connect-timeout": "^1.8.0",
+    "ejs": "^2.5.6",
+    "emoji-strip": "^1.0.1",
+    "etag": "^1.8.0",
+    "express": "^4.15.2",
+    "fs": "0.0.1-security",
+    "googleapis": "^18.0.0",
+    "humanize": "0.0.9",
+    "mandrill-api": "^1.0.45",
+    "moment": "^2.18.1",
+    "moment-timezone": "^0.5.11",
+    "mongoose": "^4.9.2",
+    "morgan": "^1.8.1",
+    "node-gcm": "^0.14.6",
+    "path": "^0.12.7",
+    "randomstring": "^1.1.5",
+    "request": "^2.81.0",
+    "stripe": "^4.23.1",
+    "underscore": "^1.8.3",
+    "util": "^0.10.3",
+    "validator": "^7.0.0"
+  },
+  "devDependencies": {}
+}
