@@ -8,6 +8,8 @@ var validator = require('validator');
 var UserModel = require('../models/user_model');
 var SessionModel = require('../models/session_model');
 
+reCAPTCHA=require('recaptcha2');
+
 
 var EcommerceErrors = require('../errors');
 
@@ -61,7 +63,16 @@ var UserService = {
      */
     register: function (body) {
         var locals = {};
-        return UserService._validateUser(body).then(function(validatedBody) {
+
+        recaptcha=new reCAPTCHA({
+            siteKey: config.get('recaptcha.site_key'),
+            secretKey:config.get('recaptcha.secret_key')
+        });
+
+        return recaptcha.validate(body.recaptcha).then(function() {
+            //All good with recaptcah.
+            return UserService._validateUser(body);
+        }).then(function(validatedBody) {
             body = validatedBody;
 
             return Promise.promisify(bcrypt.genSalt)(config.get('SALT_WORK_FACTOR'));
